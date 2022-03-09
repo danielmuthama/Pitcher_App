@@ -1,4 +1,0 @@
-Hello {{user.username}}
-Welcome to the Pitch Family
-Thank you for signing up to Pitch and Welcome to the family. Please enjoy reading pitches by other users and creating new pitches. 
-Pitch Away

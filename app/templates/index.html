@@ -1,11 +1,17 @@
-{% extends 'base.html' %}
-{% block head %}
-<!-- css link -->
-{% block styles %}
-<!--bootstrap link-->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-{{ super() }}
-<link rel="stylesheet"  href="{{ url_for('static', filename='../static/css/index.css') }}">
-{% endblock %}
-<title>{{ title }}</title>
+
+{% extends 'base.html'%} 
+{% block content %}
+<div class="container-fluid welcome-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 welcome">
+                {% if current_user.is_authenticated%}
+                <a id="start" class="btn btn-danger animated infinite flash" href="{{url_for('home.index')}}">See all Pitches</a>
+                {% else %}
+                <a id="start" class="btn btn-danger animated infinite flash" href="{{url_for('auth.login')}}">Sign In</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
