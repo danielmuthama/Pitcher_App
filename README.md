@@ -32,7 +32,7 @@ This  is a flask application that allows users to post one minute pitches and al
 | Click on submit |  | Redirect to all comments tamplate with your comment and other comments|
 
 
-PitchHere is a python based web app that allows users to submit their one minute pitches and other users will vote on them and leave comments to give their feedback on them. The pitches are organized by category. A user can have different categories like pickup lines, interview pitch , product pitch, promotion pitch.
+
 
 https://pitchworldcha.herokuapp.com/
 

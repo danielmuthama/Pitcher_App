@@ -1,6 +1,6 @@
-from flask_wtf import FlaskForm
-from wtforms import StringField, SelectField, TextAreaField, SubmitField
-from wtforms.validators import Required
+from . import FlaskForm
+from . import StringField, SelectField, TextAreaField, SubmitField
+from . import Required
 
 class UpdateProfile(FlaskForm):
     bio = TextAreaField('Write a brief bio about you.',validators = [Required()])
