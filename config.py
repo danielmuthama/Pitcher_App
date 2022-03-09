@@ -1,49 +1,26 @@
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 class Config:
-
-    '''
-    General configuration parent class
-    '''
-    SECRET_KEY = 'powerfulsecretkey'
-    SQLALCHEMY_TRACK_MODIFICATIONS = True
-    # simple mde  configurations
-    SIMPLEMDE_JS_IIFE = True
-    SIMPLEMDE_USE_CDN = True
-
-
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+    SQLALCHEMY_TRACK_MODIFICATIONS=True
+    SECRET_KEY=os.environ.get('SECRET_KEY')
+    UPLOADED_PHOTOS_DEST ='app/static/photos'
+    MAIL_SERVER = 'smtp.gmail.com'
+    MAIL_PORT = 465
+    MAIL_USE_TLS = False
+    MAIL_USE_SSL = True
+    MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
+    MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
 
 class ProdConfig(Config):
-    '''
-    Pruduction configuration child class
-
-    Args:
-        Config: The parent configuration class with General configuration settings
-    '''
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
-class TestConfig(Config):
-    '''
-    Testing configuration child class
-
-    Args:
-        Config: The parent configuration class with General configuration settings 
-    '''
-    pass
-
 class DevConfig(Config):
-    '''
-    Development configuration child class
-    
-    Args:
-        Config: The parent configuration class with General configuration settings
-    '''
-    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://liz:lizzie@localhost/pitch'
     DEBUG = True
 
-
 config_options = {
-    'development': DevConfig,
-    'production': ProdConfig,
-    'test': TestConfig
+'development':DevConfig,
+'production':ProdConfig
 }

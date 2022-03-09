@@ -1,41 +1,40 @@
-
-    <div class="navbar navbar-dark bg-primary" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                <ul>
-                <a style="text-align: center; color: whitesmoke;" class="navbar-brand" href="/pitches/new/"> Post a Pitch </a>
-                </ul>
-            </div>
-            <div class="navbar-nav">
-                <a style="text-align: center; color: whitesmoke;" class="navbar-brand" href="/"> Home </a>
-
-            </div>
-
-            <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-              {% if current_user.is_authenticated %}
-              <li style="color:whitesmoke">{{current_user.username}}</li>
-              <li><a style="color: whitesmoke;"  href="{{url_for('auth.logout')}}">Sign out</a></li>
-              {% else %}
-              <li><a style="color: whitesmoke;" href="{{url_for('auth.login')}}">Sign in</a></li>
-              {%endif%}
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark ">
+    <a class="navbar-brand" href="{{url_for('main.index')}}"><strong>Pich-World</strong> </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('main.index')}}">All Pitches</a>
+                </li>
+                {% if current_user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('main.new_pitch')}}">New Pitch</a>
+                </li>
+                {% endif %}
             </ul>
-          </div>
+        <ul class="navbar-nav ml-auto">
+            {% if current_user.is_authenticated %}
 
-
-          <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav navbar-right">
-                <li style="color:whitesmoke"></li>
-                <li><a style="color: whitesmoke;"  href="{{url_for('auth.logout')}}"></a></li>
-                <li><a style="color: whitesmoke;" href="{{url_for('auth.login')}}"></a></li>
-              </ul>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" style= 'margin-right:30px' data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-user"></i>&nbsp;<strong>{{current_user.username}}</strong> </a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+              <a class="dropdown-item" href="{{url_for('main.profile',name=current_user.username)}}"><i class="far fa-user"></i>&nbsp; My account</a>
+              <a class="dropdown-item" href="{{url_for('auth.logout')}}"><i class="fas fa-sign-out-alt"></i>&nbsp; Log out</a>
             </div>
-          
+            </li>
+            {% else %}
+            <li class="nav-item">
+                <a  class="nav-link" href="{{url_for('auth.login')}}" style= 'margin-right:30px'><i class="fas fa-sign-in-alt"></i>&nbsp; <strong>Log In</strong></a>
+            </li>
+            <li class="nav-item">
+                    <a style= 'margin-right:30px' class="nav-link" href="{{url_for('auth.signup')}}"><i class="fas fa-user-plus"></i></i>&nbsp; <strong>Sign Up</strong></a>
+                </li>
+            {%endif%}
+
+        </ul>
     </div>
-    </div>
+</nav>

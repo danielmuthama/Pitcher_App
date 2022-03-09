@@ -1,17 +1,38 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro %}
 
-{% extends 'base.html'%} 
 {% block content %}
-<div class="container-fluid welcome-page">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 welcome">
-                {% if current_user.is_authenticated%}
-                <a id="start" class="btn btn-danger animated infinite flash" href="{{url_for('home.index')}}">See all Pitches</a>
-                {% else %}
-                <a id="start" class="btn btn-danger animated infinite flash" href="{{url_for('auth.login')}}">Sign In</a>
-                {% endif %}
+    
+        <div  class="container" id="particles-js">
+                <h2 class="text-center" id="posts">All Pitches</h2>
+            <ul class="nav nav-pills nav-justified nav-fill" role="tablist">
+                <li class="nav-item" >
+                    <a id ="cats" class="nav-link" data-toggle="tab" href="#all"><strong>All Pitches</strong> </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id ="cats" data-toggle="tab" href="#jobs">Job Pitches</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id ="cats" data-toggle="tab" href="#event">Event Pitches</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id ="cats"data-toggle="tab" href="#ads">Advert Pitches</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div  class="container tab-pane active" id="all"><br>
+                    {{ macro.display(pitches) }}
+                </div>
+                <div  class="container tab-pane fade" id="event"><br>
+                    {{ macro.display(event)}}
+                </div>
+                <div  class="container tab-pane fade" id="jobs"><br>
+                    {{ macro.display(job) }}
+                </div>
+                <div  class="container tab-pane fade" id="ads"><br>
+                    {{ macro.display(advertisement) }}
+                    
+                </div>
             </div>
         </div>
-    </div>
-</div>
-{% endblock %}
+{% endblock%}
