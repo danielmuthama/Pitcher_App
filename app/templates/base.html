@@ -1,0 +1,39 @@
+{% extends 'bootstrap/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitch</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {%block styles %}
+    {{super()}}
+    <!--Importing the simple mde css and js files  -->
+    {{ simplemde.css}}
+    {{ simplemde.js }}
+
+    {% endblock %}
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet"  href="{{ url_for('static', filename='../static/css/signlog.css') }}">
+    <link rel="stylesheet"  href="{{ url_for('static', filename='../static/css/index.css') }}">
+    <link rel="stylesheet"  href="{{ url_for('static', filename='../static/css/navbar.css') }}">
+    {% endblock %}
+</head>
+<body>
+    
+    {% if url_for("main.userpage") %}
+    {% else %}
+    {% block navbar %}
+    {% include 'navbar.html' %}
+    {% endblock %}
+    {% endif %}
+    {% block content%}
+    
+    
+    {% endblock %}
+</body>
+</html>

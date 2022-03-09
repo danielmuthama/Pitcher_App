@@ -1,0 +1,28 @@
+{% macro displayPitches(pitches_body) %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 d-flex justify-content-between">
+            {% for pitch in pitches_body %}
+            <div class="col-xs-3 col-md-3 col-sm-3 col-lg-3 card ">
+                <h4 class="text-center">{{ pitch.pitchtitle }}</h4>
+                <hr>
+                <p style="font-size:xx-large;">"</p>
+                <h5>{{pitch.mypitch}}</h5>
+                <hr>
+                <div>
+                    <p class="text-left">Author : {{pitch.author}}</p>
+                    <div class="text-right">
+                        <p class="">
+                            <span class="btn btn-dark">👍 </span>0
+
+                            <span class="btn btn-dark">👎  </span>0
+                        </p>
+                    </div>
+                </div>
+                <h4>Posted At : {{pitch.postdate.strftime('%d/%m/%y')}}</h4>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endmacro %}

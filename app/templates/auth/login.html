@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block head %}
+{% block styles %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{{ super() }}
+<link rel="stylesheet"  href="{{ url_for('static', filename='../static/css/signlog.css') }}">
+{% endblock%}
+{% endblock%}
+
+    {% block content %}
+
+    <div class="login_page">
+        <div class="container">
+            <div class="row col-sm-12">
+                <div class="col-sm-6">
+                    <header class="login_page_header">
+                        <h1 id="pitchheader">Pitch</h1>
+                        <h2>Log In</h2>
+                    </header>
+                    {{ wtf.quick_form(login_form) }}
+                </div>
+                <div class="col-sm-2">
+                    <div style="border: 1px solid black; height:100%; width:1px; background-color: black;" class="mx-auto"></div>
+                    <div style="border:2px solid black; width:80% !important" class="p-1 text-center mx-auto" ><h3>OR</h3 ></div>
+                    <div style="border: 1px solid black; height:100%; width:1px; background-color: black;" class="mx-auto"></div>
+                </div>
+                <div class="col-sm-4 mh-100 d-block mx-auto my-auto" style="display:flex; align-items:center; ">
+                    <div class="card">
+                        <p class="text-center my-auto p-1">Need an account? Sign Up now!</p>
+                    </div>
+                    <a href="{{url_for('auth.signup')}}" class="btn btn-primary my-3" style="display:flex; justify-content: center;">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

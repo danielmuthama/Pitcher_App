@@ -1,0 +1,26 @@
+
+    {% extends 'base.html' %}
+    {% import 'bootstrap/wtf.html' as wtf %}
+    {% import 'macros.html' as macro %}
+
+    {% block head %}
+    <!-- css link -->
+    {% block styles %}
+    <!--bootstrap link-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {{ super() }}
+    <link rel="stylesheet"  href="{{ url_for('static', filename='../static/css/userpage.css') }}">
+    {% endblock %}
+    <title>{{ title }}</title>
+    {% endblock %}
+    
+    {% block content %}
+    <!-- quote body starts here -->
+    <div class="container-fluid">
+        <div class="row col-sm-12 col-md-12 col-lg-12 my-3 mr-3">
+            {{macro.displayPitches(pitches_body)}}
+        </div>
+    </div>
+    {% endblock %}
+
+

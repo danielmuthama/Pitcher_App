@@ -1,0 +1,18 @@
+.header_logo{
+    font-family: 'Satisfy', cursive;
+    font-size: xx-large;
+    color:orange !important;
+    margin-right:2rem;
+}
+#home, #about, #contacts {
+    font-size:large;
+    border:1px solid white;
+    margin-right: 1rem;
+}
+.signlog{
+    display:flex;
+    align-items: center;
+}
+.signup, .login {
+    margin-right:1rem;
+}

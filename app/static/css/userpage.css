@@ -1,0 +1,34 @@
+body{
+    margin:0px !important;
+}
+.usernav{
+    border:1px solid whitesmoke;
+    box-shadow: 0px 0px 4px 2px rgb(218, 216, 216);
+}
+.usernav, .usernav2{
+    display:flex;
+    text-decoration:none;
+}
+.header_logo{
+    font-family: 'Satisfy', cursive;
+    font-size: xx-large;
+    color:orange !important;
+    margin-right:2rem;
+}
+#home, #about, #contacts {
+    font-size:large;
+    border:1px solid white;
+    margin-right: 1rem;
+}
+.signlog{
+    display:flex;
+    align-items: center;
+}
+.signup, .login {
+    margin-right:1rem;
+}
+.quote-text, .startquote, .endquote{
+    font-family: 'Satisfy', cursive;
+    font-size: x-large;
+    color:orange !important; 
+}

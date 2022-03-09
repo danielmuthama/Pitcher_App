@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block head %}
+<!-- css link -->
+{% block styles %}
+<!--bootstrap link-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{{ super() }}
+<link rel="stylesheet"  href="{{ url_for('static', filename='../static/css/index.css') }}">
+{% endblock %}
+<title>{{ title }}</title>
+{% endblock %}
