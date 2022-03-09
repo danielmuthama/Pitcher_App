@@ -1,7 +1,7 @@
 # pitch-world
 ## Author
 
-[Owiti-Charles](https://github.com/Owiti-Charles)
+[Daniel-Muthama](https://danielmuthama.github.com/)
 
 # Description
 This  is a flask application that allows users to post one minute pitches and also allows other users who have signed up to comment and upvote or downvote a pitch. It also allows a person to signup to be able to access the functionalities of the application
@@ -32,7 +32,9 @@ This  is a flask application that allows users to post one minute pitches and al
 | Click on submit |  | Redirect to all comments tamplate with your comment and other comments|
 
 
+PitchHere is a python based web app that allows users to submit their one minute pitches and other users will vote on them and leave comments to give their feedback on them. The pitches are organized by category. A user can have different categories like pickup lines, interview pitch , product pitch, promotion pitch.
 
+https://pitchworldcha.herokuapp.com/
 
 
 ## Development Installation
@@ -40,8 +42,7 @@ To get the code..
 
 1. Cloning the repository:
   ```bash
-  https://github.com/Owiti-Charles/pitch-world.git
-  ```
+https://github.com/danielmuthama/Pitcher_App.git  ```
 2. Move to the folder and install requirements
   ```bash
   cd pitch-world
@@ -74,8 +75,8 @@ Open the application on your browser `127.0.0.1:5000`.
 
 ## Contact Information 
 
-If you have any question or contributions, please email me at [mikeycharlesm7@gmail.com]
+If you have any question or contributions, please email me at [danielmuthama23@gmail.com]
 
 ## License
 * *MIT License:*
-* Copyright (c) 2019 **Owiti Charles**
+* Copyright (c) 2022 **Daniel Muthama**
